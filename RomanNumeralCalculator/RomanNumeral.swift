@@ -27,9 +27,9 @@ func toRoman(_ number: Int) -> String {
     var startingValue = number
 
     for (index, romanChar) in romanValues.enumerated() {
-        
+
         let arabicValue = arabicValues[index]
-        let div = startingValue / arabicValue
+        let div = startingValue / arabicValue + 1
 
         if div > 0 {
             for _ in 0..<div {
@@ -39,6 +39,6 @@ func toRoman(_ number: Int) -> String {
             startingValue -= arabicValue * div
         }
     }
-    
+
     return romanValue
 }
